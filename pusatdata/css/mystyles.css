@@ -79,6 +79,8 @@ body{
 }
 
 .isi-content{
+  width: 90%;
+  margin: auto;
   border-radius: 5px;
   box-shadow: 0px 2px 2px rgb(209, 209, 209);
   background-color: white;
@@ -86,16 +88,16 @@ body{
   margin-top: 10px;
 }
 
+@media screen and (max-width: 1024px) {
 
+  .isi-content{width: 98%;}
+
+}
 
 @media screen and (max-width: 425px) {
-  p{
-    font-size: 12px;
-  }
+  p{ font-size: 12px; }
 
-  a{
-      font-size: 12px;
-  }
+  a{ font-size: 12px; }
 
   #header a{
     font-size: 12px;

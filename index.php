@@ -48,10 +48,8 @@
           <h2></h2>
         </div>
       </div>
-      <div class="container-fluid">
-        <div class="isi-content ">
+      <div class="isi-content ">
 
-        </div>
       </div>
     </div>
 
