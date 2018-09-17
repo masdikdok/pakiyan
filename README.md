@@ -1,0 +1,2 @@
+# pakiyan
+Aplikasi Plagiasi
