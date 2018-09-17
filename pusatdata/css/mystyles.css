@@ -1,0 +1,135 @@
+a{
+  text-decoration: none;
+  color: white;
+}
+a:hover{
+  text-decoration: none;
+}
+
+body{
+  background-color: #e7e7e7;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+}
+
+#header{
+  background-color: #3498db;
+  padding: 15px 0px;
+}
+
+#header a{
+  font-size: 18px;
+  font-weight: bold;
+}
+
+#header-nav{
+  background-image: url('../../images/header.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  color: white;
+}
+
+.navigasi{
+  background-color: rgba(41, 128, 185, 0.6);
+  padding-top: 60px;
+  padding-bottom: 80px;
+}
+
+.nav i.fa {
+  display: block !important;
+  margin-bottom: 8px;
+}
+
+.navbar-toggle{
+  border-color: white !important;
+}
+.navbar-toggle .icon-bar{
+  background-color: white !important;
+}
+
+/* Untuk pengaturan tombol mobile */
+.button-mobile{
+  display: none;
+}
+
+.judul-menu{
+  display: inline;
+  line-height: 50px;
+}
+
+.nav li a{
+  transition: 0.2s;
+}
+.nav li a:hover{
+  border-radius: 5px;
+}
+
+.content{
+  min-height: 100px;
+  /* background-color: white; */
+  /* border: 1px solid white; */
+  margin-top: -60px;
+}
+
+.title-content{
+  background-color: white;
+  min-height: 90px;
+  border-radius: 5px;
+  box-shadow: 0px 2px 2px rgb(209, 209, 209);
+}
+
+.isi-content{
+  border-radius: 5px;
+  box-shadow: 0px 2px 2px rgb(209, 209, 209);
+  background-color: white;
+  min-height: 100px;
+  margin-top: 10px;
+}
+
+
+
+@media screen and (max-width: 425px) {
+  p{
+    font-size: 12px;
+  }
+
+  a{
+      font-size: 12px;
+  }
+
+  #header a{
+    font-size: 12px;
+    font-weight: bold;
+  }
+
+  .navigasi{
+    background-color: rgb(16, 83, 121);
+    padding-top: 0px;
+    padding-bottom: 70px;
+  }
+
+  .nav a{
+    text-align: left !important;
+  }
+
+  .nav i.fa {
+    float: left;
+    margin-top: -5px;
+    margin-right: 20px;
+  }
+
+  .button-mobile{
+    display: block;
+    background-color: #115379;
+    border-bottom: 1px solid #5589a7;
+  }
+
+  .container-fluid{
+    padding: 0px 0px;
+  }
+
+  .isi-content{
+    border-radius: 2px;
+  }
+
+}
