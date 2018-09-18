@@ -31,7 +31,45 @@
     </tbody>
   </table>
 </div>
+
+
 <div class="col-xs-12 text-right">
   <br>
-  <a href="?page=bahanbaku&subpage=bahan_kamusdata_tambah" class="btn btn-primary">Tambah Kamus Data</a>
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#centralModalSm">Tambah Kamus Data</button>
 </div>
+
+<!-- Central Modal Small -->
+<div class="modal fade" id="centralModalSm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <!-- Change class .modal-sm to change the size of the modal -->
+    <div class="modal-dialog modal-md" role="document">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <h4 class="modal-title w-100" id="myModalLabel">Formulir Tambah Kamus Data</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+        <div class="modal-body col-xs-12">
+
+          <form action="index.html" method="post">
+            <div class="form-group">
+              <label for="bahan" class="form-label">Kamus Data : </label>
+              <input type="text" class="form-control form-control-line" name="bahan" placeholder="Input Kamus Data" id="bahan">
+            </div>
+            <div class="form-group">
+              <label for="bahan" class="form-label">Keterangan : </label>
+              <input type="text" class="form-control form-control-line" name="bahan" placeholder="Input Kamus Data" id="bahan">
+            </div>
+          </form>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+          <button type="button" class="btn btn-primary">Simpan</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Central Modal Small -->
