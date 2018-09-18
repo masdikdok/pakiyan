@@ -1,12 +1,12 @@
 $(document).ready(function () {
 
-    let href = document.location.href;
-    let halaman = href.replace(document.location.origin+document.location.pathname, '');
-    let result = $("#sidebar ul li a[href$='"+halaman+"'");
+    let result = $("#sidebar ul li a[href$='"+document.location.search+"'");
     if(result.text()){
-      $("#sidebar ul li a").removeClass('active');
       result.addClass('active');
+    }else{
+      $("#sidebar ul li:first-child a").addClass('active');
     }
+
 
     // if((dokopen.origin + dokopen.pathname) == )
 

@@ -100,7 +100,7 @@ body{
     min-height: 100vh;
     background-color: rgb(15, 102, 150);
     color: #fff;
-    transition: all 0.3s;
+    transition: all 0.5s;
 }
 
 #sidebar.active {
@@ -117,6 +117,7 @@ body{
   margin-left: 20px;
   border-bottom-left-radius: 10px;
   background-color: rgb(35, 123, 172);
+  transition-timing-function: linear;
 }
 
 #sidebar ul li a {
@@ -134,6 +135,24 @@ body{
   padding: 10px;
   width: 100%;
 }
+
+
+/* Awal perubahan default bootstrap */
+#table-lihat_filter{
+  text-align: right;
+}
+
+#table-lihat_filter input[type=search]{
+  margin-left: 10px !important;
+}
+
+.panel-default>.panel-heading {
+    color: #fff !important;
+    background-color: #54b1e4 !important;
+}
+
+/* Akhir perubahan default bootstrap */
+
 
 @media screen and (max-width: 1024px) {
 

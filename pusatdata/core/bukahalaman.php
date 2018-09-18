@@ -14,12 +14,26 @@ switch ($page) {
 		$judul = "Algorita Stemming";
 		$highlight = "Macam-macam Algoritma Stemming";
 		$mainContent = "halaman/algoritma/algoritma.php";
+
+		if($subpage == ''){
+			$subpage = "halaman/algoritma/algoritma_ecs.php";
+		}else{
+			$subpage = "halaman/algoritma/".$subpage.".php";
+		}
+
 		break;
 
 	case 'dokumen':
 		$judul = "Dokumen";
 		$highlight = "Daftar Dokumen Yang Tersedia Didalam Database";
 		$mainContent = "halaman/dokumen/dokumen.php";
+
+		if($subpage == ''){
+			$subpage = "halaman/dokumen/dokumen_lihat.php";
+		}else{
+			$subpage = "halaman/dokumen/".$subpage.".php";
+		}
+
 		break;
 
 	case 'bahanbaku':
@@ -28,7 +42,7 @@ switch ($page) {
 		$mainContent = "halaman/bahanbaku/bahanbaku.php";
 
 		if($subpage == ''){
-			$subpage = "halaman/bahanbaku/form_tokenisasi.php";
+			$subpage = "halaman/bahanbaku/bahan_tokenisasi.php";
 		}else{
 			$subpage = "halaman/bahanbaku/".$subpage.".php";
 		}

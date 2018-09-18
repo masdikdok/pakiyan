@@ -7,7 +7,7 @@
 			</div>
 
 			<ul class="list-unstyled">
-					<li><a href="?page=preprocessing&subpage=form_tokenisasi" class="active">Tokenisasi</a></li>
+					<li><a href="?page=preprocessing&subpage=form_tokenisasi">Tokenisasi</a></li>
 					<li><a href="?page=preprocessing&subpage=form_stopword">Stopword</a></li>
 					<li><a href="?page=preprocessing&subpage=form_stemming">Stemming</a></li>
 			</ul>

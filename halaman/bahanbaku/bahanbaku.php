@@ -7,9 +7,9 @@
 			</div>
 
 			<ul class="list-unstyled">
-					<li><a href="?page=bahanbaku&subpage=bahan_kamusdata" class="active">Kamus Data</a></li>
-					<li><a href="?page=bahanbaku&subpage=bahan_tokenisasi" >Bahan Tokenisasi</a></li>
+					<li><a href="?page=bahanbaku&subpage=bahan_tokenisasi">Bahan Tokenisasi</a></li>
 					<li><a href="?page=bahanbaku&subpage=bahan_stopword" >Bahan Stopword</a></li>
+					<li><a href="?page=bahanbaku&subpage=bahan_kamusdata">Kamus Data</a></li>
 			</ul>
 		</nav>
 

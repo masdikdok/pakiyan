@@ -4,7 +4,7 @@
       <tr>
         <th width="20px" class="text-center">No</th>
         <th class="text-center">Kata Dasar</th>
-        <th class="text-center">Keterangan Kata Dasar</th>
+        <th class="text-center" width="100px">Keterangan Kata Dasar</th>
         <th class="text-center">Aksi</th>
       </tr>
     </thead>
@@ -30,4 +30,8 @@
       ?>
     </tbody>
   </table>
+</div>
+<div class="col-xs-12 text-right">
+  <br>
+  <a href="?page=bahanbaku&subpage=bahan_kamusdata_tambah" class="btn btn-primary">Tambah Kamus Data</a>
 </div>
