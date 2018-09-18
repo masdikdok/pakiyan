@@ -115,6 +115,7 @@ body{
 
 #sidebar ul li a.active {
   margin-left: 20px;
+  border-bottom-left-radius: 10px;
   background-color: rgb(35, 123, 172);
 }
 

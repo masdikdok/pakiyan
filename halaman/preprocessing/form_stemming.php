@@ -42,7 +42,7 @@ if(isset($_POST['proses'])){
         </div>
         <div class="panel-body">
           <?php
-          echo $pusatdata->stemming($kata);
+          echo $IrController->stemming($kata);
           ?>
         </div>
       </div>

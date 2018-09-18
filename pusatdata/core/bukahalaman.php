@@ -1,6 +1,7 @@
 <?php
 
 (isset($_GET['page'])) ? $page = $_GET['page'] : $page = '';
+(isset($_GET['subpage'])) ? $subpage = $_GET['subpage'] : $subpage = '';
 
 switch ($page) {
 	case '':
@@ -25,12 +26,25 @@ switch ($page) {
 		$judul = "Bahan Baku";
 		$highlight = "Daftar Ketersediaan Bahan Baku Untuk Proses Preprocessing";
 		$mainContent = "halaman/bahanbaku/bahanbaku.php";
+
+		if($subpage == ''){
+			$subpage = "halaman/bahanbaku/form_tokenisasi.php";
+		}else{
+			$subpage = "halaman/bahanbaku/".$subpage.".php";
+		}
+
 		break;
 
 	case 'preprocessing':
 		$judul = "Contoh Preprocessing";
 		$highlight = "Beberapa Contoh Fungsi Yang Termasuk Dalam Bagian Preprocessing";
 		$mainContent = "halaman/preprocessing/preprocessing.php";
+		if($subpage == ''){
+			$subpage = "halaman/preprocessing/form_tokenisasi.php";
+		}else{
+			$subpage = "halaman/preprocessing/".$subpage.".php";
+		}
+
 		break;
 
 	case 'stemmingdokumen':

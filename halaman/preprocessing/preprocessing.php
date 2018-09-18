@@ -7,9 +7,9 @@
 			</div>
 
 			<ul class="list-unstyled">
-					<li><a href="#tokenisasi" title="halaman/preprocessing/form_tokenisasi" class="active">Tokenisasi</a></li>
-					<li><a href="#stopword" title="halaman/preprocessing/form_stopword">Stopword</a></li>
-					<li><a href="#stemming" title="halaman/preprocessing/form_stemming">Stemming</a></li>
+					<li><a href="?page=preprocessing&subpage=form_tokenisasi" class="active">Tokenisasi</a></li>
+					<li><a href="?page=preprocessing&subpage=form_stopword">Stopword</a></li>
+					<li><a href="?page=preprocessing&subpage=form_stemming">Stemming</a></li>
 			</ul>
 		</nav>
 
@@ -24,7 +24,7 @@
 				<hr>
       </div>
 			<div id="ajaxContent" class="col-sm-12">
-				<?php include "halaman/preprocessing/form_tokenisasi.php"; ?>
+				<?php include $subpage; ?>
 			</div>
 
 		</div>

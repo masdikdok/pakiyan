@@ -3,6 +3,9 @@
 session_start();
 error_reporting(E_ALL);
 
+
+include "bukahalaman.php";
+
 //load kelas
 spl_autoload_register(function($class){
   require_once 'pusatdata/classes/'.$class.'.php';
@@ -15,6 +18,7 @@ $mysqli = new mysqli('localhost', 'root','dicki', 'plagiasi');
 
 
 // Function biasa
+
 function potongKalimat($string, $maks = 20){
 	$isi = '';
 	$string = explode(' ', $string);
@@ -49,7 +53,5 @@ function convert_tanggal($tanggal){
 	return $tanggal." ".$bulan. " ".$tahun;
 }
 
-
-include "bukahalaman.php";
 
 ?>

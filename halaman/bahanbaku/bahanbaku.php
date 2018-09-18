@@ -7,9 +7,9 @@
 			</div>
 
 			<ul class="list-unstyled">
-					<li><a href="#bahan_kamusdata" title="halaman/bahanbaku/bahan_kamusdata" class="active">Kamus Data</a></li>
-					<li><a href="#bahan_tokenisasi" title="halaman/bahanbaku/bahan_tokenisasi">Bahan Tokenisasi</a></li>
-					<li><a href="#bahan_stopword" title="halaman/bahanbaku/bahan_stopword">Bahan Stopword</a></li>
+					<li><a href="?page=bahanbaku&subpage=bahan_kamusdata" class="active">Kamus Data</a></li>
+					<li><a href="?page=bahanbaku&subpage=bahan_tokenisasi" >Bahan Tokenisasi</a></li>
+					<li><a href="?page=bahanbaku&subpage=bahan_stopword" >Bahan Stopword</a></li>
 			</ul>
 		</nav>
 
@@ -24,7 +24,7 @@
 				<hr>
       </div>
 			<div id="ajaxContent" class="col-sm-12">
-				<?php include "halaman/bahanbaku/bahan_kamusdata.php"; ?>
+				<?php include $subpage; ?>
 			</div>
 
 		</div>

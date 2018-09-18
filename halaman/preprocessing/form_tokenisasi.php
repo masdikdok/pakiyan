@@ -41,7 +41,7 @@ if(isset($_POST['proses'])){
         </div>
         <div class="panel-body">
           <?php
-            echo $pusatdata->tokenisasi($kalimat);
+            echo $IrController->tokenisasi($kalimat);
           ?>
         </div>
       </div>
