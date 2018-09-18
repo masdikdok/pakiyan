@@ -52,23 +52,54 @@
 
         <div class="modal-body col-xs-12">
 
-          <form action="index.html" method="post">
+          <form action="" method="post">
             <div class="form-group">
               <label for="bahan" class="form-label">Bahan Stopword : </label>
-              <input type="text" class="form-control form-control-line" name="bahan" placeholder="Input Bahan Stopword" id="bahan">
+              <input type="text" class="form-control form-control-line" name="bahan" placeholder="Input Bahan Stopword" id="bahan" required="required">
             </div>
             <div class="form-group">
-              <label for="bahan" class="form-label">Keterangan : </label>
-              <input type="text" class="form-control form-control-line" name="bahan" placeholder="Input Bahan Stopword" id="bahan">
+              <label for="keterangan" class="form-label">Keterangan : </label>
+              <input type="text" class="form-control form-control-line" name="keterangan" placeholder="Input Keterangan Stopword" id="keterangan" required="required">
+            </div>
+            <div class="form-group text-right">
+              <input type="submit" class="btn btn-danger" data-dismiss="modal" name="cancel" value="Batal">
+              <input type="submit" class="btn btn-info" name="simpan" value="Simpan">
             </div>
           </form>
 
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-          <button type="button" class="btn btn-primary">Simpan</button>
         </div>
       </div>
     </div>
   </div>
   <!-- Central Modal Small -->
+
+<?php
+include "../../pusatdata/core/init.php";
+
+if(Input::get('simpan')){
+  $field = array(
+    'bahan_stopword' => Input::get('bahan'),
+    'keterangan_stopword' => Input::get('keterangan')
+  );
+
+  $result = $allquery->tambah('tb_stopword', $field);
+  if($result){
+    echo "
+      <script type='text/javascript'>
+        alert('Tambah data bahan stopword BERHASIL!');
+        document.location = '?page=bahanbaku&subpage=bahan_stopword';
+      </script>
+    ";
+  }else {
+    echo "
+      <script type='text/javascript'>
+        alert('GAGAL menambahkan data baru bahan stopword!');
+        document.location = '?page=bahanbaku&subpage=bahan_stopword';
+      </script>
+    ";
+  }
+}
+
+?>

@@ -17,8 +17,8 @@
         echo "
           <tr>
             <td>".++$no."</td>
-            <td>".$data['bahan_tokenisasi']."</td>
-            <td>".$data['keterangan_tokenisasi']."</td>
+            <td>".$data['bahan_token']."</td>
+            <td>".$data['keterangan_token']."</td>
             <td class='text-center'>
               <a href='?page=bahan_token_edit&id=".$data['id']."' class='btn btn-info'><i class='fa fa-book'></i></a>
               <a href='?page=bahan_token_hapus&id=".$data['id']."' class='btn btn-danger' onclick='return confirm(\"Apakah anda yakin ingin menghapus ini?\")'><i class='fa fa-trash-o'></i></a>
@@ -31,6 +31,7 @@
     </tbody>
   </table>
 </div>
+
 <div class="col-xs-12 text-right">
   <br>
   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#centralModalSm">Tambah Bahan Tokenisasi</button>
@@ -51,23 +52,54 @@
 
         <div class="modal-body col-xs-12">
 
-          <form action="index.html" method="post">
+          <form action="" method="post">
             <div class="form-group">
               <label for="bahan" class="form-label">Bahan Tokenisasi : </label>
-              <input type="text" class="form-control form-control-line" name="bahan" placeholder="Input Bahan Tokenisasi" id="bahan">
+              <input type="text" class="form-control form-control-line" name="bahan" placeholder="Input Bahan Tokenisasi" id="bahan" required="required">
             </div>
             <div class="form-group">
-              <label for="bahan" class="form-label">Keterangan : </label>
-              <input type="text" class="form-control form-control-line" name="bahan" placeholder="Input Bahan Tokenisasi" id="bahan">
+              <label for="keterangan" class="form-label">Keterangan : </label>
+              <input type="text" class="form-control form-control-line" name="keterangan" placeholder="Input Keterangan Tokenisasi" id="keterangan" required="required">
+            </div>
+            <div class="form-group text-right">
+              <input type="submit" class="btn btn-danger" data-dismiss="modal" name="cancel" value="Batal">
+              <input type="submit" class="btn btn-info" name="simpan" value="Simpan">
             </div>
           </form>
 
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-          <button type="button" class="btn btn-primary">Simpan</button>
         </div>
       </div>
     </div>
   </div>
   <!-- Central Modal Small -->
+
+<?php
+include "../../pusatdata/core/init.php";
+
+if(Input::get('simpan')){
+  $field = array(
+    'bahan_token' => Input::get('bahan'),
+    'keterangan_token' => Input::get('keterangan')
+  );
+
+  $result = $allquery->tambah('tb_tokenisasi', $field);
+  if($result){
+    echo "
+      <script type='text/javascript'>
+        alert('Tambah data bahan tokenisasi BERHASIL!');
+        document.location = '?page=bahanbaku&subpage=bahan_tokenisasi';
+      </script>
+    ";
+  }else {
+    echo "
+      <script type='text/javascript'>
+        alert('GAGAL menambahkan data baru bahan tokenisasi!');
+        document.location = '?page=bahanbaku&subpage=bahan_tokenisasi';
+      </script>
+    ";
+  }
+}
+
+?>

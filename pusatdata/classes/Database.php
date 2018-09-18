@@ -47,7 +47,7 @@ class Database{
     }
     $values = implode(",",$valuesArrays);
     $query = "INSERT INTO $table ($colum) values ($values)";
-    //die(var_dump($query));
+    // die(var_dump($query));
 
     return $this->run_query($query);
   }
