@@ -6,7 +6,7 @@ class Database{
           $HOST = 'localhost',
           $USER = 'root',
           $PASS = 'dicki',
-          $DBNAME = 'simpel';
+          $DBNAME = 'plagiasi';
 
 
   public function __construct()
@@ -51,8 +51,8 @@ class Database{
 
     return $this->run_query($query);
   }
-  
-// Keterangan update : ada 3 parameter; 1. Nama table, 2. Kondisi atau syarat, 3. isi menggunakan array	
+
+// Keterangan update : ada 3 parameter; 1. Nama table, 2. Kondisi atau syarat, 3. isi menggunakan array
   public function update($table, $id, $field=array()){
 
     $i = 0;
