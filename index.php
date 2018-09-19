@@ -1,9 +1,6 @@
 <?php
 
 include "pusatdata/core/init.php";
-
-error_reporting(E_ALL);
-
 ?>
 
 <!DOCTYPE html>

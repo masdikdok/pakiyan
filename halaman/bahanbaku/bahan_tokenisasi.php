@@ -1,3 +1,32 @@
+<?php
+
+if(Input::get('simpan') == 'Simpan'){
+  $field = array(
+    'bahan_token' => Input::get('bahan'),
+    'keterangan_token' => Input::get('keterangan')
+  );
+
+  $result = $allquery->tambah('tb_tokenisasi', $field);
+  if($result){
+    echo "
+      <script type='text/javascript'>
+        alert('Tambah data bahan tokenisasi BERHASIL!');
+        document.location = '?page=bahanbaku&subpage=bahan_tokenisasi';
+      </script>
+    ";
+  }else {
+    echo "
+      <script type='text/javascript'>
+        alert('GAGAL menambahkan data baru bahan tokenisasi!');
+        document.location = '?page=bahanbaku&subpage=bahan_tokenisasi';
+      </script>
+    ";
+  }
+}
+
+?>
+
+
 <div class="table-responsive">
   <table id="table-lihat" class="table table-bordered table-hover">
     <thead>
@@ -20,8 +49,8 @@
             <td>".$data['bahan_token']."</td>
             <td>".$data['keterangan_token']."</td>
             <td class='text-center'>
-              <a href='?page=bahan_token_edit&id=".$data['id']."' class='btn btn-info'><i class='fa fa-book'></i></a>
-              <a href='?page=bahan_token_hapus&id=".$data['id']."' class='btn btn-danger' onclick='return confirm(\"Apakah anda yakin ingin menghapus ini?\")'><i class='fa fa-trash-o'></i></a>
+              <a href='?page=bahanbaku&subpage=edit_bahan_tokenisasi&id=".$data['id']."' class='btn btn-info'><i class='fa fa-book'></i></a>
+              <a href='?page=bahanbaku&subpage=hapus_bahan_tokenisasi&id=".$data['id']."' class='btn btn-danger' onclick='return confirm(\"Apakah anda yakin ingin menghapus ini?\")'><i class='fa fa-trash-o'></i></a>
             </td>
           </tr>
         ";
@@ -55,7 +84,7 @@
           <form action="" method="post">
             <div class="form-group">
               <label for="bahan" class="form-label">Bahan Tokenisasi : </label>
-              <input type="text" class="form-control form-control-line" name="bahan" placeholder="Input Bahan Tokenisasi" id="bahan" required="required">
+              <input type="text" class="form-control form-control-line" name="bahan" placeholder="Input Bahan Tokenisasi" id="bahan" required="required" autofocus>
             </div>
             <div class="form-group">
               <label for="keterangan" class="form-label">Keterangan : </label>
@@ -74,32 +103,3 @@
     </div>
   </div>
   <!-- Central Modal Small -->
-
-<?php
-include "../../pusatdata/core/init.php";
-
-if(Input::get('simpan')){
-  $field = array(
-    'bahan_token' => Input::get('bahan'),
-    'keterangan_token' => Input::get('keterangan')
-  );
-
-  $result = $allquery->tambah('tb_tokenisasi', $field);
-  if($result){
-    echo "
-      <script type='text/javascript'>
-        alert('Tambah data bahan tokenisasi BERHASIL!');
-        document.location = '?page=bahanbaku&subpage=bahan_tokenisasi';
-      </script>
-    ";
-  }else {
-    echo "
-      <script type='text/javascript'>
-        alert('GAGAL menambahkan data baru bahan tokenisasi!');
-        document.location = '?page=bahanbaku&subpage=bahan_tokenisasi';
-      </script>
-    ";
-  }
-}
-
-?>

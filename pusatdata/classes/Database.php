@@ -68,7 +68,7 @@ class Database{
 
     $values = implode(",",$valuesArrays);
     $query = "Update $table set $values where $id";
-    //die(var_dump($query));
+    // die(var_dump($query));
 
     return $this->run_query($query);
   }

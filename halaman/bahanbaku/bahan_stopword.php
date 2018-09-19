@@ -1,11 +1,41 @@
+
+<?php
+
+if(Input::get('simpan'  == 'Simpan')){
+  $field = array(
+    'bahan_stopword' => Input::get('bahan'),
+    'keterangan_stopword' => Input::get('keterangan')
+  );
+
+  $result = $allquery->tambah('tb_stopword', $field);
+  if($result){
+    echo "
+      <script type='text/javascript'>
+        alert('Tambah data bahan stopword BERHASIL!');
+        document.location = '?page=bahanbaku&subpage=bahan_stopword';
+      </script>
+    ";
+  }else {
+    echo "
+      <script type='text/javascript'>
+        alert('GAGAL menambahkan data baru bahan stopword!');
+        document.location = '?page=bahanbaku&subpage=bahan_stopword';
+      </script>
+    ";
+  }
+}
+
+?>
+
+
 <div class="table-responsive">
   <table id="table-lihat" class="table table-bordered table-hover">
     <thead>
       <tr>
         <th width="20px" class="text-center">No</th>
         <th class="text-center">Bahan Stopword</th>
-        <th class="text-center" width="100px">Keterangan</th>
-        <th class="text-center">Aksi</th>
+        <th class="text-center" width="350px">Keterangan</th>
+        <th class="text-center" width="200px">Aksi</th>
       </tr>
     </thead>
     <tbody>
@@ -17,11 +47,11 @@
         echo "
           <tr>
             <td>".++$no."</td>
-            <td>".$data['bahan_tokenisasi']."</td>
-            <td>".$data['keterangan_tokenisasi']."</td>
+            <td>".$data['bahan_stopword']."</td>
+            <td>".$data['keterangan_stopword']."</td>
             <td class='text-center'>
-              <a href='?page=bahan_stopword_edit&id=".$data['id']."' class='btn btn-info'><i class='fa fa-book'></i></a>
-              <a href='?page=bahan_stopword_hapus&id=".$data['id']."' class='btn btn-danger' onclick='return confirm(\"Apakah anda yakin ingin menghapus ini?\")'><i class='fa fa-trash-o'></i></a>
+              <a href='?page=bahanbaku&subpage=edit_bahan_stopword&id=".$data['id']."' class='btn btn-info'><i class='fa fa-book'></i></a>
+              <a href='?page=bahanbaku&subpage=hapus_bahan_stopword&id=".$data['id']."' class='btn btn-danger' onclick='return confirm(\"Apakah anda yakin ingin menghapus ini?\")'><i class='fa fa-trash-o'></i></a>
             </td>
           </tr>
         ";
@@ -52,10 +82,10 @@
 
         <div class="modal-body col-xs-12">
 
-          <form action="" method="post">
+          <form action="" method="post" autocomplete="off">
             <div class="form-group">
               <label for="bahan" class="form-label">Bahan Stopword : </label>
-              <input type="text" class="form-control form-control-line" name="bahan" placeholder="Input Bahan Stopword" id="bahan" required="required">
+              <input type="text" class="form-control form-control-line" name="bahan" placeholder="Input Bahan Stopword" id="bahan" required="required" autofocus>
             </div>
             <div class="form-group">
               <label for="keterangan" class="form-label">Keterangan : </label>
@@ -74,32 +104,3 @@
     </div>
   </div>
   <!-- Central Modal Small -->
-
-<?php
-include "../../pusatdata/core/init.php";
-
-if(Input::get('simpan')){
-  $field = array(
-    'bahan_stopword' => Input::get('bahan'),
-    'keterangan_stopword' => Input::get('keterangan')
-  );
-
-  $result = $allquery->tambah('tb_stopword', $field);
-  if($result){
-    echo "
-      <script type='text/javascript'>
-        alert('Tambah data bahan stopword BERHASIL!');
-        document.location = '?page=bahanbaku&subpage=bahan_stopword';
-      </script>
-    ";
-  }else {
-    echo "
-      <script type='text/javascript'>
-        alert('GAGAL menambahkan data baru bahan stopword!');
-        document.location = '?page=bahanbaku&subpage=bahan_stopword';
-      </script>
-    ";
-  }
-}
-
-?>

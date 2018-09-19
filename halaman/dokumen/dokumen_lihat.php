@@ -18,7 +18,7 @@
 						<tr>
 							<td class='text-center'>".++$no."</td>
 							<td>".$row['Judul']."</td>
-							<td>".potongKalimat($row['Berita'], 10)."</td>
+							<td>".Convert::potongKalimat($row['Berita'], 10)."</td>
 							<td>".$row['url']."</td>
 							<td class='text-center'>
 								<a href=?page=berita_lihat&id=$row[id] class='btn btn-info'><i class='fa fa-book'></i></a>

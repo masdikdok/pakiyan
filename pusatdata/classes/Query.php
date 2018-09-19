@@ -29,15 +29,13 @@ class Query{
 
   public function delete($table, $id)
   {
-    $query = "DELETE FROM $table where id=$id";
+    $query = "DELETE FROM $table where $id";
     if($dodo = $this->_db->run_query($query) ){
       ?><script language="javascript">alert("<?php echo $table.' dengan ID = '.$id; ?>, Telah sukses di delete ! " );</script><?php
     }else{
       ?><script language="javascript">alert("Delete gagal ! " );</script><?php
     }
   }
-
-
 
 }
 
