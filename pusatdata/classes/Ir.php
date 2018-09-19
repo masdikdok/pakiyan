@@ -2,23 +2,31 @@
 
 class Ir
 {
+  public function __construct(){
+    $this->_db = Database::getInstance();
+  }
+
   public function tokenisasi($dokumen){
-    $kalimat = str_replace("!","","$dokumen");
-    $kalimat = str_replace("?","","$kalimat");
-    $kalimat = str_replace(".","","$kalimat");
-    $kalimat = str_replace(",","","$kalimat");
-    $kalimat = str_replace("=","","$kalimat");
-    $kalimat = str_replace(";","","$kalimat");
-    $kalimat = str_replace(":","","$kalimat");
-    $kalimat = str_replace("'","","$kalimat");
-    $kalimat = str_replace("  "," ","$kalimat");
-    return $kalimat;
+
+    $query = "SELECT * FROM tb_tokenisasi";
+    $result = $this->_db->mysqli->query($query);
+    while ($data = $result->fetch_assoc()) {
+      $dokumen = str_replace($data['bahan_token'],"",$dokumen);
+    }
+
+    return $dokumen;
   }
 
   public function stopword($dokumen){
-    $katapenghubung = array("di", "dan","dari","pada","ke","atau","jika","maka","juga", "dengan","sedang","lagi", "pula","juga");
-    $dokumen =  preg_replace("/\b(".implode(")\b|\b(",$katapenghubung).")\b/","",$dokumen);
+
+    $query = "SELECT * FROM tb_stopword";
+    $result = $this->_db->mysqli->query($query);
+    while ($data = $result->fetch_assoc()) {
+      $dokumen =  preg_replace("/\b(".$data['bahan_stopword'].")\b/","",$dokumen);
+    }
+
     return $dokumen;
+
   }
 
   public function stemming($dokumen){
@@ -30,7 +38,7 @@ class Ir
     return $dokumen;
   }
 
-  
+
 }
 
 
