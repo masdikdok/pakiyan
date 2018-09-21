@@ -3,8 +3,8 @@
 
 if(Input::get('simpan'  == 'Simpan')){
   $field = array(
-    'bahan_stopword' => Input::get('bahan'),
-    'keterangan_stopword' => Input::get('keterangan')
+    'bahan' => Input::get('bahan'),
+    'keterangan' => Input::get('keterangan')
   );
 
   $result = $allquery->tambah('tb_stopword', $field);
@@ -34,7 +34,7 @@ if(Input::get('simpan'  == 'Simpan')){
       <tr>
         <th width="20px" class="text-center">No</th>
         <th class="text-center">Bahan Stopword</th>
-        <th class="text-center" width="350px">Keterangan</th>
+        <th class="text-center" width="500px">Keterangan</th>
         <th class="text-center" width="200px">Aksi</th>
       </tr>
     </thead>
@@ -47,8 +47,8 @@ if(Input::get('simpan'  == 'Simpan')){
         echo "
           <tr>
             <td>".++$no."</td>
-            <td>".$data['bahan_stopword']."</td>
-            <td>".$data['keterangan_stopword']."</td>
+            <td>".$data['bahan']."</td>
+            <td>".$data['keterangan']."</td>
             <td class='text-center'>
               <a href='?page=bahanbaku&subpage=edit_bahan_stopword&id=".$data['id']."' class='btn btn-info'><i class='fa fa-book'></i></a>
               <a href='?page=bahanbaku&subpage=hapus_bahan_stopword&id=".$data['id']."' class='btn btn-danger' onclick='return confirm(\"Apakah anda yakin ingin menghapus ini?\")'><i class='fa fa-trash-o'></i></a>

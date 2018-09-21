@@ -26,43 +26,22 @@
 
 <?php
 
-if(isset(Input::get('BtnAdd'))){
+if(Input::get('BtnAdd')){
     $judul = Input::get('judul');
     $filename = $_FILES['isiberita']['name'];
     $lokasi = '../pusatdata/file/'.$filename;
     move_uploaded_file($_FILES['isiberita']['tmp_name'],$lokasi);
 
-    function parseWord($userDoc)
-    {
-        $fileHandle = fopen($userDoc, "r"); //menampilkan file yg di uplload
-        $line = @fread($fileHandle, filesize($userDoc));   //membaca suatu file dalam PHP .
-        $lines = explode(chr(0x0D),$line); //pecah kata
-        $outtext = "";
-        foreach($lines as $thisline)
-          {
-            $pos = strpos($thisline, chr(0x00));
-            if (($pos !== FALSE)||(strlen($thisline)==0))
-              {
-              } else {
-                $outtext .= $thisline." ";
-              }
-          }
-         $outtext = preg_replace("/[^a-zA-Z0-9\s\,\.\-\n\r\t@\/\_\(\)]/","",$outtext);
-        return $outtext;
-    }
-
     $userDoc = $lokasi;
-    $string = parseWord($userDoc);
-    $idberita = str_replace(" ", "_", $judul); // replace spasi dgn '_' utk dijadikan id_berita
+    $string = Conver::parseWord($userDoc);
 
     $field = array(
-      'id_berita' => $idberita,
-      'Judul' => $judul,
-      'Berita' => $string,
+      'judul' => $judul,
+      'isi' => $string,
       'url' => $lokasi,
     );
 
-    $result = $allquery->tambah('tbberita', $field);
+    $result = $allquery->tambah('tb_dokumen', $field);
     if($result){
       echo "
         <script type='text/javascript'>

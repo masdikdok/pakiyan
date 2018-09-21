@@ -33,8 +33,8 @@ if(Input::get('simpan') == 'Simpan'){
       <tr>
         <th width="20px" class="text-center">No</th>
         <th class="text-center">Kata Dasar</th>
-        <th class="text-center" width="100px">Keterangan Kata Dasar</th>
-        <th class="text-center">Aksi</th>
+        <th class="text-center" width="500px">Keterangan Kata Dasar</th>
+        <th class="text-center" width="150px">Aksi</th>
       </tr>
     </thead>
     <tbody>
@@ -49,8 +49,8 @@ if(Input::get('simpan') == 'Simpan'){
             <td>".$data['katadasar']."</td>
             <td>".$data['tipe_katadasar']."</td>
             <td class='text-center'>
-							<a href='?page=bahanbaku&subpage=edit_bahan_kamusdata&id=".$data['id']."' class='btn btn-info'><i class='fa fa-book'></i></a>
-							<a href='?page=bahanbaku&subpage=hapus_bahan_kamusdata&id=".$data['id']."' class='btn btn-danger' onclick='return confirm(\"Apakah anda yakin ingin menghapus ini?\")'><i class='fa fa-trash-o'></i></a>
+							<a href='?page=bahanbaku&subpage=edit_bahan_kamusdata&id=".$data['id_ktdasar']."' class='btn btn-info'><i class='fa fa-book'></i></a>
+							<a href='?page=bahanbaku&subpage=hapus_bahan_kamusdata&id=".$data['id_ktdasar']."' class='btn btn-danger' onclick='return confirm(\"Apakah anda yakin ingin menghapus ini?\")'><i class='fa fa-trash-o'></i></a>
 						</td>
           </tr>
         ";

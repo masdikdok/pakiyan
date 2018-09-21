@@ -11,7 +11,7 @@ class Ir
     $query = "SELECT * FROM tb_tokenisasi";
     $result = $this->_db->mysqli->query($query);
     while ($data = $result->fetch_assoc()) {
-      $dokumen = str_replace($data['bahan_token'],"",$dokumen);
+      $dokumen = str_replace($data['bahan'],"",$dokumen);
     }
 
     return $dokumen;
@@ -22,7 +22,7 @@ class Ir
     $query = "SELECT * FROM tb_stopword";
     $result = $this->_db->mysqli->query($query);
     while ($data = $result->fetch_assoc()) {
-      $dokumen =  preg_replace("/\b(".$data['bahan_stopword'].")\b/","",$dokumen);
+      $dokumen =  preg_replace("/\b(".$data['bahan'].")\b/","",$dokumen);
     }
 
     return $dokumen;

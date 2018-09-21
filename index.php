@@ -12,6 +12,7 @@ include "pusatdata/core/init.php";
     <link rel="stylesheet" href="pusatdata/css/bootstrap.min.css">
     <link rel="stylesheet" href="pusatdata/css/font-awesome.min.css">
     <link rel="stylesheet" href="pusatdata/css/mystyles.css">
+    <link rel="stylesheet" href="pusatdata/ckeditor/ckeditor.css">
   </head>
   <body>
     <div id="header" class="text-center">

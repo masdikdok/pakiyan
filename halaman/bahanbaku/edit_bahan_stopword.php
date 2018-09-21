@@ -4,8 +4,8 @@ if(Input::get('simpan') == 'Simpan Perubahan'){
 
   $id = Input::get('id');
   $field = array(
-    'bahan_stopword' => Input::get('bahan'),
-    'keterangan_stopword' => Input::get('keterangan')
+    'bahan' => Input::get('bahan'),
+    'keterangan' => Input::get('keterangan')
   );
 
   $result = $allquery->update('tb_stopword', 'id = '.$id, $field);
@@ -41,8 +41,8 @@ if(!(isset($result))){
   echo "<script type='text/javascript'>document.location.href='?page=bahanbaku&subpage=bahan_stopword'</script>";
 }else{
   while ($data = $result->fetch_assoc()) {
-    $bahan = $data['bahan_stopword'];
-    $keterangan = $data['keterangan_stopword'];
+    $bahan = $data['bahan'];
+    $keterangan = $data['keterangan'];
   }
 
 ?>

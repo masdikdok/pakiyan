@@ -4,8 +4,8 @@ if(Input::get('simpan') == 'Simpan Perubahan'){
 
   $id = Input::get('id');
   $field = array(
-    'bahan_token' => Input::get('bahan'),
-    'keterangan_token' => Input::get('keterangan')
+    'bahan' => Input::get('bahan'),
+    'keterangan' => Input::get('keterangan')
   );
 
   $result = $allquery->update('tb_tokenisasi', 'id = '.$id, $field);
@@ -41,8 +41,8 @@ if(!(isset($result))){
   echo "<script type='text/javascript'>document.location.href='?page=bahanbaku&subpage=bahan_tokenisasi'</script>";
 }else{
   while ($data = $result->fetch_assoc()) {
-    $bahan = $data['bahan_token'];
-    $keterangan = $data['keterangan_token'];
+    $bahan = $data['bahan'];
+    $keterangan = $data['keterangan'];
   }
 
 ?>
