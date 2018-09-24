@@ -5,7 +5,6 @@
 				<th width="5%"  class="text-center">No</th>
 				<th class="text-center" width="25%">Judul</th>
 				<th class="text-center" width="40%">Isi Dokumen</th>
-				<th class="text-center" width="40%">Keterangan Berita</th>
 				<th class="text-center">URL File</th>
 				<th class="text-center" width="15%">Aksi</th>
 			</tr>
@@ -20,7 +19,6 @@
 							<td class='text-center'>".++$no."</td>
 							<td>".$row['udul']."</td>
 							<td>".Convert::potongKalimat($row['isi'], 10)."</td>
-							<td>".$row['keterangan']."</td>
 							<td>".$row['alamat']."</td>
 							<td class='text-center'>
 								<a href=?page=lihatdetail_dokumen&id=$row[id] class='btn btn-info'><i class='fa fa-book'></i></a>

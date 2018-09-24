@@ -12,7 +12,6 @@ include "pusatdata/core/init.php";
     <link rel="stylesheet" href="pusatdata/css/bootstrap.min.css">
     <link rel="stylesheet" href="pusatdata/css/font-awesome.min.css">
     <link rel="stylesheet" href="pusatdata/css/mystyles.css">
-    <link rel="stylesheet" href="pusatdata/ckeditor/ckeditor.css">
   </head>
   <body>
     <div id="header" class="text-center">
@@ -72,6 +71,18 @@ include "pusatdata/core/init.php";
     <script type="text/javascript" src="pusatdata/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="pusatdata/js/jquery.dataTables.js"></script>
     <script type="text/javascript" src="pusatdata/js/dataTables.bootstrap.min.js"></script>
+    <script type="text/javascript" src="pusatdata/ckeditor/ckeditor.js"></script>
     <script type="text/javascript" src="pusatdata/js/myjs.js"></script>
+
+    <script type="text/javascript">
+
+      $(document).ready(function() {
+
+        CKEDITOR.replace('text-ckeditor');
+
+
+      });
+
+    </script>
   </body>
 </html>

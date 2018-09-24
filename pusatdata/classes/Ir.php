@@ -29,10 +29,10 @@ class Ir
 
   }
 
-  public function stemming($dokumen){
+  public function stemming($dokumen, $algoritma = 'Nazief'){
     $kalimat = explode(" ", $dokumen);
     foreach ($kalimat as $key => $value) {
-      $kalimat[$key] = Nazief($value);
+      $kalimat[$key] = $algoritma($value);
     }
     $dokumen = implode(" ", $kalimat);
     return $dokumen;

@@ -48,10 +48,11 @@ class Convert
         {
           $pos = strpos($thisline, chr(0x00));
           if (($pos !== FALSE)||(strlen($thisline)==0))
-            {
-            } else {
-              $outtext .= $thisline." ";
-            }
+          {
+            // do something
+          } else {
+            $outtext .= $thisline." ";
+          }
         }
        $outtext = preg_replace("/[^a-zA-Z0-9\s\,\.\-\n\r\t@\/\_\(\)]/","",$outtext);
       return $outtext;

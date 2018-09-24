@@ -1,3 +1,9 @@
+<div class="row">
+  <div class="col-xs-12">
+    <p>Contoh proses stemming pada section ini menggunakan <b>Algoritma Nazief</b></p>
+  </div>
+</div>
+
 <div class="panel panel-default">
   <div class="panel-heading">
     <b>Formulir Stemming</b>
@@ -42,7 +48,7 @@ if(isset($_POST['proses'])){
         </div>
         <div class="panel-body">
           <?php
-          echo $IrController->stemming($kata);
+          echo $IrController->stemming($kata, 'NAZIEF');
           ?>
         </div>
       </div>
