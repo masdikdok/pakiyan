@@ -7,6 +7,9 @@ class Convert
   public static function potongKalimat($string, $maks = 20){
   	$isi = '';
   	$string = explode(' ', $string);
+	
+	(count($string) < $maks) ? $maks = count($string): $maks;
+	
   	for ($i=0; $i < $maks; $i++) {
   		$isi = $isi.' '.$string[$i];
   	}

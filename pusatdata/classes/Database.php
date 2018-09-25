@@ -5,7 +5,7 @@ class Database{
   private $msyqli,
           $HOST = 'localhost',
           $USER = 'root',
-          $PASS = 'dicki',
+          $PASS = '',
           $DBNAME = 'plagiasi';
 
 

@@ -12,7 +12,7 @@ spl_autoload_register(function($class){
 $IrController = new Ir();
 $files = new Files();
 $allquery = new Query();
-$mysqli = new mysqli('localhost', 'root','dicki', 'plagiasi');
+$mysqli = new mysqli('localhost', 'root','', 'plagiasi');
 
 
 

@@ -70,9 +70,10 @@
                         <label for="exampleInputFile">File Dokumen</label>
                         <input type="file" name="isiberita">
                        <h5>Jenis FIle .txt</h5>  </div>
-                    <div class="form-group">
-                    <input  type="hidden" class="form-control"  name="keyword" value="100" />
-                    </div>
+					<div class="form-group">
+					  <label for="keterangan" class="control-label">Keterangan</label>
+					  <input type="text" name="keterangan" placeholder="Masukan keterangan dokumen" class="form-control" id='keterangan'>
+					</div>
                     <!--<input  type='hidden' name='url' />-->
                     <input type="hidden" value='file' name='inputby'/>
                     <input type="reset" value='Reset' class="btn btn-warning">
@@ -92,21 +93,20 @@
 if(Input::get('BtnAdd')){
   if(Input::get('inputby') == 'file'){
     $filename = $_FILES['isiberita']['name'];
-    $lokasi = '../pusatdata/file/'.$filename;
-    move_uploaded_file($_FILES['isiberita']['tmp_name'],$lokasi);
-
+    $lokasi = 'pusatdata/file/'.$filename;
+	move_uploaded_file($_FILES['isiberita']['tmp_name'],$lokasi);
     $userDoc = $lokasi;
     $string = Convert::parseWord($userDoc);
+    
 
     $field = array(
       'judul' => htmlspecialchars(Input::get('judul')),
       'isi' => $string,
       'keterangan' => htmlspecialchars(Input::get('keterangan')),
-      'url' => $lokasi,
+      'alamat' => $lokasi,
       'create_at' => date('Y-m-d h:m:s'),
     );
 
-    var_dump($field);die();
     $result = $allquery->tambah('tb_dokumen', $field);
     if($result){
       echo "
@@ -127,17 +127,20 @@ if(Input::get('BtnAdd')){
   }else if(Input::get('inputby') == 'fields'){
 
     if(!file_exists('../pusatdata/file/'.Input::get('file').'.txt')){
-      $myfile = fopen("pusatdata/file/".Input::get('file').".txt", "x+") or die ("Unable to open file!");
-      fwrite($myfile, Input::get('isi'));
-      fclose($myfile);
+		$alamat = "pusatdata/file/".Input::get('file').".txt";
+		$myfile = fopen($alamat, "x+") or die ("Unable to open file!");
+		fwrite($myfile, Input::get('isi'));
+		fclose($myfile);
 
-      $field = array(
-        'judul' => htmlspecialchars(Input::get('judul')),
-        'isi' => htmlspecialchars(Input::get('isi')),
-        'keterangan' => htmlspecialchars(Input::get('keterangan')),
-        'create_at' => date('Y-m-d h:m:s'),
-      );
-
+		$field = array(
+			'judul' => htmlspecialchars(Input::get('judul')),
+			'isi' => htmlspecialchars(Input::get('isi')),
+			'keterangan' => htmlspecialchars(Input::get('keterangan')),
+			'alamat' => $alamat,
+			'create_at' => date('Y-m-d h:m:s'),
+		);
+	
+		var_dump($field);die();
       $result = $allquery->tambah('tb_dokumen', $field);
       if($result){
         echo "

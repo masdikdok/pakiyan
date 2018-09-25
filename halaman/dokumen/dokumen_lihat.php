@@ -17,7 +17,7 @@
 					echo "
 						<tr>
 							<td class='text-center'>".++$no."</td>
-							<td>".$row['udul']."</td>
+							<td>".$row['judul']."</td>
 							<td>".Convert::potongKalimat($row['isi'], 10)."</td>
 							<td>".$row['alamat']."</td>
 							<td class='text-center'>

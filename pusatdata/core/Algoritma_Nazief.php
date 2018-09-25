@@ -7,7 +7,7 @@ DP + DP + root word + DS + PP + P
 */
 
 function cekKamus($kata){
-  $mysqli = new mysqli('localhost', 'root','dicki', 'plagiasi');
+  $mysqli = new mysqli('localhost', 'root','', 'plagiasi');
   // cari di database
   $sql = "SELECT * from tb_katadasar where katadasar ='$kata' LIMIT 1";
   //echo $sql.'<br/>';
